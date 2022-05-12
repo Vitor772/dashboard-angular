@@ -1,3 +1,1239 @@
+<html>
+<head>
+	<title>Admin Dashboard</title>
+	
+</head>
+<body>
+  <style>
+  
+  *{
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.4s ease-in-out;
+}
 
-  <app-show-products></app-show-products>
+body{
+    margin: 0%;
+}
 
+.container{
+    display: flex;
+}
+
+.left-div{
+    width: 245px;
+    height: 100vh;
+    background-color: #343549;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+     
+}
+
+.right-div{
+    flex: 1;
+}
+
+.header{
+    background-color: #EDECF1;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 245px;
+    right: 0px;
+    top: 0px;
+     
+}
+
+.content{
+    background-color: #F8F8FA;
+    display: flex;
+    flex-direction: column;
+    padding-left: 245px;
+    padding-top: 80px;
+     
+}
+
+.content-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+.right-content button{
+    height: 34px;
+    width: 102px;
+    border-radius: 5px;
+    background-color: #626ED3;
+    color: #FAF9FF;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-div{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+     
+}
+
+.card{
+    width: 258px;
+    height: 150px;
+    background-color: #626ED3;
+    border-radius: 5px;
+    flex: auto;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.bottom-div{
+    background-color: #F8F8FA;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px
+}
+
+.transaction{
+    background-color: #FFFFFF;   
+    display: flex;
+    flex-direction: column;   
+    border-radius: 6px;
+    overflow-x: auto;
+    flex: auto;
+    margin: 10;
+}
+
+.head{
+    padding: 20px;
+    font-weight: bold;
+    color: #484852;
+}
+
+.transaction-table{
+    padding: 18px;
+}
+
+.transaction-table button{
+    color: #f0f8fe;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+    color: #9ca0a3;
+}
+
+table th{
+    border-top: 1px solid #ddd;
+    font-weight: bold;
+}
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-button{
+    background-color: #6271d0; 
+    padding: 10px; 
+    border-radius: 6px;
+}
+
+.name-col{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.name-icon{
+    margin-right: 10px;
+}
+
+th{
+    height: 45px;
+}
+
+td{
+    height: 60px;
+}
+
+.chat{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    flex: auto;
+    margin: 10px;
+}
+
+.chat-icon-time{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.timestamp{
+    font-size: 10px;
+    text-align: center;
+    color: #7d7e82;
+}
+
+
+.logo{
+    color: #EAEBED;
+    font-size: 20px;
+    padding: 30px 72px;
+}
+
+.title{
+    color: #A8B3C7;
+    padding: 3px 12px;
+    font-size: 11px;
+}
+
+.side-links ul{
+    list-style-type: none;
+    color: #818C9E;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.side-links li{
+    height: 25px;
+    padding: 17px 12px;
+}
+
+.side-links a{
+    display: flex;
+    justify-content: space-between;
+}
+
+.not-dot .fa{
+    margin: 0;
+}
+
+.not-dot{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 20;
+    padding: 1px;
+    font-size: 12px;
+    height: fit-content;
+    justify-content: space-around;
+}
+
+.side-links li:hover{
+    background-color: #393C4F;
+    color: #EAEBED;
+}
+
+.side-links i{
+    margin-right: 18px;
+}
+
+.ham{
+    width: 60px;
+    text-align: center;
+    font-size: 20px;
+    color: #596481;
+    cursor: pointer;
+}
+
+form{
+    margin: 0;
+}
+
+.left-sub-div{
+    display: flex;
+    align-items: center;
+}
+
+.right-sub-div{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 520px;
+    justify-content: space-around;
+    color: #888a99;
+}
+
+.notification{
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+}
+
+.profile-icon{
+    border-radius: 50%;
+    background-color: #626ed2;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.search-bar{
+    border-radius: 20px;
+    background-color: #E1E1EB;
+}
+
+.search-bar input{
+    width: 196px;
+    height: 32px;
+    background-color: #E1E1EB;
+    border: none;
+    border-radius: 32px;
+    padding-left: 20px;
+}
+
+.dropdown-lang select{
+    border: none;
+    background-color: inherit;
+    color: #626378;
+    height: 32px;
+    width: 95px;
+}
+
+.search-bar .fa-search { 
+    top: 24px;
+    left: 7px;
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.head-main, .head-sub{
+    width: fit-content;
+    font-size: 18px;
+    padding-left: 30px;
+    color: #4E5156;
+    margin: 0px;
+}
+
+.head-main{
+    margin-bottom: 10px;
+}
+
+.upper-stat{
+    height: 58px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lower-stat{
+    color: #aeb8fd;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-left{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 20;
+}
+
+.card-icon{
+    width: 56px;
+    height: 58px;
+    background-color: #7b85da;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.order-stat{
+    width: 60px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fcf3fb;
+}
+
+.trend-stat{
+    width: 82px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ribbon{
+    width: 76px;
+    height: 26px;
+    background-color: #4ca39b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 6px;
+    color: #fcf3fb;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 15px solid #626ED3;
+}
+
+.chat-area{ 
+    overflow: scroll;
+    padding: 10px;
+}
+
+.chat-user-1{
+    display: flex;
+    padding: 10px;
+}
+
+.chat-user-2{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+}
+
+.chat-text{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.chat-user-name{
+    font-size: 15px;
+    color: #696ec9;
+}
+
+.chat-triangle-left{
+    width: 0px;
+    height: 0px;
+    border-bottom: 18px solid transparent;
+    border-left: 16px solid #eff0f4;
+}
+
+.chat-triangle-right{
+    width: 0px;
+    height: 0px;
+    border-bottom: 18px solid transparent;
+    border-right: 16px solid #e2e4fb;
+}
+
+.chat-text-right{
+    margin-left: 30px;
+    border-top-right-radius: 0px;
+    background-color: #eff0f4;
+    color: #90959b;
+}
+
+.chat-text-left{
+    background-color: #e1e4f7;
+    border-top-left-radius: 0px;
+}
+
+.chat-text-left .chat-msg{
+    color: #595797;
+}
+
+.chat-box form{
+    display: flex;
+    flex: auto;
+    padding: 5px;
+}
+
+.chat-box input{
+    width: 100%;
+    height: 35px;
+    margin: 5px;
+    border-radius: 6px;
+    padding-left: 10px;
+    border: 1px solid #edecf1;
+    font-size: 13px;
+}
+
+.chat-box button{
+    width: 55px;
+    height: 35px;
+    margin: 5px;
+    background-color: #4ea59b;
+    color: #eefefe;
+    border-radius: 6px;
+}
+
+.right-sub-div.hide{
+    padding-right: 10px;
+    justify-content: space-between;
+}
+
+
+.right-sub-div.hide .search-bar{
+    display: none;
+}
+
+.right-sub-div.hide .dropdown-lang{
+    display: none;
+}
+
+.right-sub-div.hide .notification{
+    display: none;
+}
+
+.container.hide .left-div .nav-item{
+    display: none;
+}
+
+.container.hide .left-div{ 
+    width: 60px;
+}
+
+.container.hide .left-div .not-dot{
+    display: none;
+}
+
+.container.hide .left-div .side-links li{
+    padding: 17px;
+}
+
+.container.hide .content{
+    padding-left: 50px;
+}
+
+.container.hide .right-div .header{
+    left: 60px;
+}
+
+
+.dropbtn {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fb;
+    color: #202427;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    width: 78px;
+    height: 35px;
+    border-radius: 5px;
+  }
+
+  .dropbtn-lang{
+    width: 86px;
+    padding: 0px;
+    color: #818e9f;
+    background-color: #ecebf1;
+    font-size: 12px;
+  }
+  
+  
+  .dropdown-content, .dropdown-content-lang{
+    display: none;
+    position: absolute;
+    background-color: #f8f9fb;
+    min-width: 78px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  .dropdown-content a{
+    color: #202427;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+  }
+
+
+  .dropdown-content-lang a {
+    color: #202427;
+    padding: 12px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .dropdown-content a:hover {background-color: #EDECF1;}
+  
+  .dropdown-content.showDiv {
+    display: block;
+  }
+
+  .dropdown-content-lang.showDiv {
+    display: block;
+  }
+
+  .not-bell{
+      font-size: 20px;
+  }
+  
+  .not-count{
+    background: #e84258;
+    color: white;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    font-size: 12px;
+    border-radius: 8px;
+    width: 12px;
+    padding-left: 4px;
+  }
+  </style>
+
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body id="doc">
+
+        <div class="parent-container">
+
+            <div class="container">
+
+                <div class="left-div">
+                    
+                    <div class="logo">
+                        GeekyAnts
+                    </div>
+
+                    <div class="title">
+                        MAIN
+                    </div>
+
+                    <div class="side-links">
+                        <ul>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span class="nav-item">Dashboard</span>
+                                    </span>
+                                    <span class="not-dot" style="background-color: #5d6adc; color: #EAEBED;">2</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <span class="nav-item">Calendar</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        <span class="nav-item">Email</span>
+                                    </span>
+                                    <span class="not-dot"> 
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-cube" aria-hidden="true"></i>
+                                        <span class="nav-item">UI Elements</span>
+                                    </span>
+                                    <span class="not-dot">
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                                    
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-sticky-note" aria-hidden="true"></i>
+                                        <span class="nav-item">Forms</span>
+                                    </span>
+                                    <span class="not-dot" style="background-color: #499e95; color: #EAEBED;">9</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-clock" aria-hidden="true"></i>
+                                        <span class="nav-item">Charts</span>
+                                    </span>
+                                    <span class="not-dot">
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-th-large" aria-hidden="true"></i>
+                                        <span class="nav-item">Tables</span>
+                                    </span>
+                                    <span class="not-dot">
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-smile" aria-hidden="true"></i>
+                                        <span class="nav-item">Icons</span>
+                                    </span>
+                                    <span class="not-dot">
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        <span class="nav-item">Maps</span>
+                                    </span>
+                                    <span class="not-dot" style="background-color: #e94258; color: #EAEBED;">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="right-div">
+
+                    <div class="header">
+                        
+                        <div class="left-sub-div">
+
+                            <div class="ham">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="dropbtn">Create <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Delete</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="right-sub-div">
+
+                            <div class="profile-icon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="notification not-bell">
+                                <i class="fa fa-bell"></i>
+                                <span class="not-count">2</span>
+                            </div>
+
+                            <div class="notification">
+                                <i class="fa fa-arrows-alt expand-screen"></i>
+                            </div>
+
+                            <div class="dropdown-lang">
+                                <button class="dropbtn dropbtn-lang"><img src="images/usa_flag.png" height="14px" width="20px">English<i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                <div class="dropdown-content-lang" style="width: 86px;">
+                                    <a href="#"><img src="images/india_flag.png" height="14px" width="20px">Hindi</a>
+                                </div>
+                            </div>
+
+                            <div class="search-bar">
+                                <form>
+                                    <input type="text" placeholder="Search.." height="32px"> 
+                                    <span class="fa fa-search"></span>  
+                                </form> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="content">   
+
+                        <div class="content-heading">
+                            <div class="left-content">
+                                <p class="head-main">Dashboard</p>
+                                <p class="head-sub" style="font-size: 15px;">Welcome to Veltrix Dashboard</p>
+                            </div>
+
+                            <div class="right-content" style="margin-right: 20px;">
+                                <button type="button"><i class="fa fa-cog" aria-hidden="true"></i>Settings</button>
+                            </div>
+                            
+                        </div>
+
+
+                        <div class="card-div">
+                            <div class="card">
+                                <div class="upper-stat">
+                                    
+                                    <div class="card-left">
+                                        <div class="card-icon" style="color: #fcf3fb; font-size: 30px;">
+                                            <img src="images/01.png" height="34px" width="34px">
+                                        </div>
+
+                                        <div class="order-stat">
+                                            <div style="color: #adb3ef;">
+                                                ORDERS
+                                            </div>
+                                            <div style="font-size:20px;">
+                                                1,685
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-stat">
+                                        <div class="ribbon">
+                                            <div class="triangle"></div>
+                                            <div style="margin-right: 12px;">+12%</div>    
+                                        </div>
+
+                                        <div class="arrow" style="color: #4ca39b;">
+                                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="lower-stat">
+                                    
+                                    <div class="timeline">
+                                        Since last month
+                                    </div>
+
+                                    <div class="arrow-right" style="font-size: 14px;">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="upper-stat">
+                                    
+                                    <div class="card-left">
+                                        <div class="card-icon" style="color: #fcf3fb; font-size: 30px;">
+                                            <img src="images/02.png" height="32px" width="32px">
+                                        </div>
+
+                                        <div class="order-stat">
+                                            <div style="color: #adb3ef;">
+                                                REVENUE
+                                            </div>
+                                            <div style="font-size:20px;">
+                                                52,368
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-stat">
+                                        <div class="ribbon" style="background-color: #e94a69;">
+                                            <div class="triangle"></div>
+                                            <div style="margin-right: 12px;">-28% </div>
+                                        </div>
+
+                                        <div class="arrow" style="color: #e94a69;">
+                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="lower-stat">
+                                    
+                                    <div class="timeline">
+                                        Since last month
+                                    </div>
+
+                                    <div class="arrow-right" style="font-size: 14px;">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="upper-stat">
+                                    
+                                    <div class="card-left">
+                                        <div class="card-icon" style="color: #fcf3fb; font-size: 30px;">
+                                            <img src="images/03.png" height="30px" width="32px">
+                                        </div>
+
+                                        <div class="order-stat">
+                                            <div class="order-stat-head" style="color: #adb3ef;">
+                                                AVERAGE PRICE
+                                            </div>
+                                            <div style="font-size:20px;">
+                                                15.8
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-stat">
+                                        <div class="ribbon" style="background-color: #3ba4f7;">
+                                            <div class="triangle"></div>
+                                            <div style="margin-right: 12px;">00% </div>   
+                                        </div>
+
+                                        <div class="arrow" style="color: #4ca39b;">
+                                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="lower-stat">
+                                    
+                                    <div class="timeline">
+                                        Since last month
+                                    </div>
+
+                                    <div class="arrow-right" style="font-size: 14px;">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="upper-stat">
+                                    
+                                    <div class="card-left">
+                                        <div class="card-icon" style="color: #fcf3fb; font-size: 30px;">
+                                            <img src="images/04.png" height="25.7px" width="32px">
+                                        </div>
+
+                                        <div class="order-stat">
+                                            <div style="color: #adb3ef;">
+                                                PRODUCT SOLD
+                                            </div>
+                                            <div style="font-size:20px;">
+                                                2436
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-stat">
+                                        <div class="ribbon" style="background-color: #f5d433;">
+                                            <div class="triangle"></div>
+                                            <div style="margin-right: 12px;">+84% </div>    
+                                        </div>
+
+                                        <div class="arrow" style="color: #4ca39b;">
+                                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="lower-stat">
+                                    
+                                    <div class="timeline">
+                                        Since last month
+                                    </div>
+
+                                    <div class="arrow-right" style="font-size: 14px;">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-div">
+                            
+                            <div class="transaction">
+                                <span class="head">Latest Transaction</span>
+                                <div class="transaction-table">
+                                    <table>
+                                        <tr>
+                                            <th>(#)Id</th>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <td>#142256</td>
+                                            <td class="name-col">
+                                                <div class="profile-icon name-icon">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </div>
+                                                Griffin
+                                            </td>
+                                            <td>15/02/2019</td>
+                                            <td>$100</td>
+                                            <td><button style="background-color: #46978b; border-radius: 6px;">Delivered</button></td>
+                                            <td><button class="table-button">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#142257</td>
+                                            <td class="name-col">
+                                                <div class="profile-icon name-icon">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </div>
+                                                Griffin
+                                            </td>
+                                            <td>15/02/2019</td>
+                                            <td>$150</td>
+                                            <td><button style="background-color: #f4ac33; border-radius: 6px;">Pending</button></td>
+                                            <td><button class="table-button">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#142258</td>
+                                            <td class="name-col">
+                                                <div class="profile-icon name-icon">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </div>
+                                                Swanson
+                                            </td>
+                                            <td>15/02/2019</td>
+                                            <td>$300</td>
+                                            <td><button style="background-color: #46978b; border-radius: 6px;">Delivered</button></td>
+                                            <td><button class="table-button">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#142259</td>
+                                            <td class="name-col">
+                                                <div class="profile-icon name-icon">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </div>
+                                                Brown
+                                            </td>
+                                            <td>15/02/2019</td>
+                                            <td>$250</td>
+                                            <td><button style="background-color: #e64053; border-radius: 6px;">Cancel</button></td>
+                                            <td><button class="table-button">Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#142260</td>
+                                            <td class="name-col">
+                                                <div class="profile-icon name-icon">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </div>
+                                                Brown
+                                            </td>
+                                            <td>15/02/2019</td>
+                                            <td>$250</td>
+                                            <td><button style="background-color: #46978b; border-radius: 6px;;">Delivered</button></td>
+                                            <td><button class="table-button">Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="chat">
+                                <span class="head">Chat</span>
+                                <div class="chat-area">
+                                    
+                                    <div class="chat-user-1">
+                                        <div class="chat-icon-time">
+                                            <div class="profile-icon">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                            <span class="timestamp">10:02</span>
+                                        </div>
+
+                                        <div class="chat-triangle-right"></div>
+
+                                        <div class="chat-text chat-text-left">
+                                            <span class="chat-user-name">
+                                                John Doe
+                                            </span>
+                                            <div class="chat-msg">
+                                                Hello!
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-user-2">
+                                        <div class="chat-icon-time">
+                                            <div class="profile-icon">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                            <span class="timestamp">10:03</span>
+                                        </div>
+                                        
+                                        
+                                        <div class="chat-triangle-left"></div>
+
+                                        <div class="chat-text chat-text-right" style="width: 180px;">
+                                            <span class="chat-user-name">
+                                                Smith
+                                            </span>
+                                            <div class="chat-msg">
+                                                Hi, how are you? What about our next meeting?
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-user-1">
+                                        <div class="chat-icon-time">
+                                            <div class="profile-icon">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                            <span class="timestamp">10:04</span>
+                                        </div>
+                                        
+
+                                        <div class="chat-triangle-right"></div>
+
+                                        <div class="chat-text chat-text-left">
+                                            <span class="chat-user-name">
+                                                John Doe
+                                            </span>
+                                            <div class="chat-msg">
+                                                Yeah! Everything is fine.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-user-2">
+                                        <div class="chat-icon-time">
+                                            <div class="profile-icon">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                            <span class="timestamp">10:09</span>
+                                        </div>
+                                        
+
+                                        <div class="chat-triangle-left"></div>
+
+                                        <div class="chat-text chat-text-right">
+                                            <span class="chat-user-name">
+                                                Smith
+                                            </span>
+                                            <div class="chat-msg">
+                                                Wow, that's great!
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-user-2">
+                                        <div class="chat-icon-time">
+                                            <div class="profile-icon">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                            <span class="timestamp">10:12</span>
+                                        </div>
+                                        
+
+                                        <div class="chat-triangle-left"></div>
+
+                                        <div class="chat-text chat-text-right">
+                                            <span class="chat-user-name">
+                                                Smith
+                                            </span>
+                                            <div class="chat-msg">
+                                                When are we meeting then?
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="chat-box">
+                                    <form>
+                                        <input type="text" placeholder="Enter your text">
+                                        <button type="button">Send</button>
+                                    </form>
+                                </div>
+                            </div>  
+
+                        </div>
+
+                    </div> 
+
+                </div>
+
+            </div>
+            
+        </div>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                $('.dropdown').click(function(){
+                    $('.dropdown-content').toggleClass('showDiv');
+                });
+                
+
+                $('.dropdown-lang').click(function(){
+                    $('.dropdown-content-lang').toggleClass('showDiv');
+                });
+
+                
+
+
+                $('.expand-screen').click(function(){
+                    if (!document.fullscreenElement &&    // alternative standard method
+                        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+                        if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                        } else if (document.documentElement.msRequestFullscreen) {
+                        document.documentElement.msRequestFullscreen();
+                        } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                        } else if (document.documentElement.webkitRequestFullscreen) {
+                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                        }
+                    } else {
+                        if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                        } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                        } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                        }
+                    }
+                }); 
+
+                $('.ham').click(function(){
+                    $('.container').toggleClass('hide');
+                });
+
+                var window_width;
+                
+
+                $(window).resize(function(){
+                    window_width = $(window).width();
+                    
+                    if(window_width <= 950 && !$('.container').hasClass('hide')){
+                        $('.container').addClass('hide');
+                        $('.right-sub-div').addClass('hide');
+                    }
+                    else if(window_width > 950 && $('.container').hasClass('hide')){
+                        $('.container').removeClass('hide');
+                        $('.right-sub-div').removeClass('hide');
+                    }
+                 
+                    
+                })
+
+                
+            });
+        </script>
+
+    </body>
+</html>
